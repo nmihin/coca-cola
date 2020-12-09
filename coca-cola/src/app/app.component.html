@@ -2,7 +2,69 @@
 <mat-toolbar class="header">
     <img class="header-logo" src="../assets/icons/logo.svg" />
     <div class="header-cart">
-      <img class="cart" src="../assets/icons/shopping-cart.svg" />
+      <img [matMenuTriggerFor]="cartOpen" class="cart" src="../assets/icons/shopping-cart.svg" />
+      <mat-menu class="header-menu" #cartOpen="matMenu">
+        <ul class="header-cart-list">
+          <li class="header-cart-list-element">
+            <figure>
+              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+              <figcaption>
+                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
+                <h2 class="header-cart-product-thumbnail-price">
+                  <span>EUR </span>
+                  <data>2,00</data>
+                </h2>
+                <div class="header-cart-options">
+                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
+                  <span class="header-cart-quantity">1</span>
+                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="header-cart-list-element">
+            <figure>
+              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+              <figcaption>
+                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
+                <h2 class="header-cart-product-thumbnail-price">
+                  <span>EUR </span>
+                  <data>2,00</data>
+                </h2>
+                <div class="header-cart-options">
+                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
+                  <span class="header-cart-quantity">1</span>
+                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="header-cart-list-element">
+            <figure>
+              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+              <figcaption>
+                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
+                <h2 class="header-cart-product-thumbnail-price">
+                  <span>EUR </span>
+                  <data>2,00</data>
+                </h2>
+                <div class="header-cart-options">
+                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
+                  <span class="header-cart-quantity">1</span>
+                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="header-cart-total">
+          <h2 class="header-cart-total-title">Gesamt</h2>
+          <h2 class="header-cart-total-price">
+            <span>EUR </span>
+            <data>6,00</data>
+          </h2>
+        </div>
+      </mat-menu>
     </div>
 </mat-toolbar>
 <mat-toolbar class="subheader">
@@ -13,30 +75,115 @@
 <mat-card class="content">
   <div class="wrapper">
     <div class="row">
-      <div class="col-xs-4">
-        <img class="product-thumbnail" src="../assets/products/test-image.png" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <figure>
+          <img class="product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+          <figcaption>
+            <h2 class="product-thumbnail-title">Sprite</h2>
+            <h3 class="product-thumbnail-price">
+              <span>EUR </span>
+              <data>2,00</data>
+            </h3>
+            <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
+          </figcaption>
+        </figure>
       </div>
-      <div class="col-xs-4">
-        <img class="product-thumbnail" src="../assets/products/test-image.png" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <figure>
+          <img class="product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+          <figcaption>
+            <h2 class="product-thumbnail-title">Sprite</h2>
+            <h3 class="product-thumbnail-price">
+              <span>EUR </span>
+              <data>2,00</data>
+            </h3>
+            <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
+          </figcaption>
+        </figure>
       </div>
-      <div class="col-xs-4">
-        <img class="product-thumbnail" src="../assets/products/test-image.png" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <figure>
+          <img class="product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+          <figcaption>
+            <h2 class="product-thumbnail-title">Sprite</h2>
+            <h3 class="product-thumbnail-price">
+              <span>EUR </span>
+              <data>2,00</data>
+            </h3>
+            <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
+          </figcaption>
+        </figure>
       </div>
-      <div class="col-xs-4">
-        <img class="product-thumbnail" src="../assets/products/test-image.png" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <figure>
+          <img class="product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+          <figcaption>
+            <h2 class="product-thumbnail-title">Sprite</h2>
+            <h3 class="product-thumbnail-price">
+              <span>EUR </span>
+              <data>2,00</data>
+            </h3>
+            <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
+          </figcaption>
+        </figure>
       </div>
-      <div class="col-xs-4">
-        <img class="product-thumbnail" src="../assets/products/test-image.png" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <figure>
+          <img class="product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+          <figcaption>
+            <h2 class="product-thumbnail-title">Sprite</h2>
+            <h3 class="product-thumbnail-price">
+              <span>EUR </span>
+              <data>2,00</data>
+            </h3>
+            <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
+          </figcaption>
+        </figure>
       </div>
-      <div class="col-xs-4">
-        <img class="product-thumbnail" src="../assets/products/test-image.png" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <figure>
+          <img class="product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+          <figcaption>
+            <h2 class="product-thumbnail-title">Sprite</h2>
+            <h3 class="product-thumbnail-price">
+              <span>EUR </span>
+              <data>2,00</data>
+            </h3>
+            <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
+          </figcaption>
+        </figure>
       </div>
-      <div class="col-xs-4">
-        <img class="product-thumbnail" src="../assets/products/test-image.png" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <figure>
+          <img class="product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+          <figcaption>
+            <h2 class="product-thumbnail-title">Sprite</h2>
+            <h3 class="product-thumbnail-price">
+              <span>EUR </span>
+              <data>2,00</data>
+            </h3>
+            <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
+          </figcaption>
+        </figure>
       </div>
-      <div class="col-xs-4">
-        <img class="product-thumbnail" src="../assets/products/test-image.png" />
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <figure>
+          <img class="product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+          <figcaption>
+            <h2 class="product-thumbnail-title">Sprite</h2>
+            <h3 class="product-thumbnail-price">
+              <span>EUR </span>
+              <data>2,00</data>
+            </h3>
+            <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
+          </figcaption>
+        </figure>
       </div>
+    </div>
+    <div class="continue-shopping">
+      <button class="continue-shopping-button cc-btn__secondary">
+        <span>Weiter zum Kauf</span>
+      </button>
     </div>
   </div>
 </mat-card>

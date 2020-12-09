@@ -52,6 +52,105 @@ table {
 	border-spacing: 0;
 }
 
+/* FONTS */
+@font-face{
+  font-family:"uniform";
+  src:url("./assets/fonts/Uniform.ttf") format("woff"),
+  url("./assets/fonts/Uniform.ttf") format("opentype"),
+  url("./assets/fonts/Uniform.ttf") format("truetype");
+}
+
+@font-face{
+  font-family:"uniform-bold";
+  src:url("./assets/fonts/UniformBold.ttf") format("woff"),
+  url("./assets/fonts/UniformBold.ttf") format("opentype"),
+  url("./assets/fonts/UniformBold.ttf") format("truetype");
+}
+
+@font-face{
+  font-family:"uniform-medium";
+  src:url("./assets/fonts/UniformMedium.ttf") format("woff"),
+  url("./assets/fonts/UniformMedium.ttf") format("opentype"),
+  url("./assets/fonts/UniformMedium.ttf") format("truetype");
+}
+
+@font-face{
+  font-family:"uniform-light";
+  src:url("./assets/fonts/UniformLight.ttf") format("woff"),
+  url("./assets/fonts/UniformLight.ttf") format("opentype"),
+  url("./assets/fonts/UniformLight.ttf") format("truetype");
+}
+
+@font-face{
+  font-family:"uniform-extra-condense";
+  src:url("./assets/fonts/UniformExtraCondensedMedium.ttf") format("woff"),
+  url("./assets/fonts/UniformExtraCondensedMedium.ttf") format("opentype"),
+  url("./assets/fonts/UniformExtraCondensedMedium.ttf") format("truetype");
+}
+
+@font-face{
+  font-family:"uniform-extra-condense-light";
+  src:url("./assets/fonts/UniformExtraCondensedLight.ttf") format("woff"),
+  url("./assets/fonts/UniformExtraCondensedLight.ttf") format("opentype"),
+  url("./assets/fonts/UniformExtraCondensedLight.ttf") format("truetype");
+}
+
+/* BUTTONS */
+[class*="cc-btn"] {
+  z-index: 1;
+  font-family: "uniform-extra-condense-light", sans-serif;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  outline: none;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 10px 25px;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  -webkit-transition: background-color 0.3s ease-out;
+  -moz-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+  border: none;
+}
+.cc-btn__primary {
+  color: #fff !important;
+  border-radius: 6px !important;
+  background: #84346a;
+  background: -moz-linear-gradient(top, #84346a 0%, #5d0d43 100%);
+  background: -webkit-linear-gradient(top, #84346a 0%,#5d0d43 100%);
+  background: linear-gradient(to bottom, #84346a 0%,#5d0d43 100%);
+}
+.cc-btn__primary:hover {
+  background: #84346a;
+  background: -moz-linear-gradient(top, #84346a 0%, #4c0836 100%);
+  background: -webkit-linear-gradient(top, #84346a 0%,#4c0836 100%);
+  background: linear-gradient(to bottom, #84346a 0%,#4c0836 100%);
+}
+.cc-btn__secondary {
+  color: #fff !important;
+  border-radius: 6px !important;
+  background: #95ce42;
+  background: -moz-linear-gradient(top, #95ce42 0%, #6ea61d 100%);
+  background: -webkit-linear-gradient(top, #95ce42 0%,#6ea61d 100%);
+  background: linear-gradient(to bottom, #95ce42 0%,#6ea61d 100%);
+}
+.cc-btn__secondary:hover {
+  background: #95ce42;
+  background: -moz-linear-gradient(top, #95ce42 0%, #608f1b 100%);
+  background: -webkit-linear-gradient(top, #95ce42 0%,#608f1b 100%);
+  background: linear-gradient(to bottom, #95ce42 0%,#608f1b 100%);
+}
+
 /* HEADER */
 .header {
   background-color: #e41e2b;
@@ -61,6 +160,10 @@ table {
   height: 100px;
 }
 
+.header-menu {
+  border:2px solid #a51144;
+}
+
 .header-logo {
   width: 160px;
   margin: 0 auto;
@@ -68,6 +171,90 @@ table {
 
 .header-cart .cart {
   height: 30px;
+}
+
+.header-cart:hover {
+  cursor: pointer;
+}
+
+.header-cart-list {
+  float: left;
+  padding: 12px;
+  min-width: 240px;
+  border-bottom: 1px solid #000;
+}
+
+.header-cart-list .header-cart-list-element {
+  float: left;
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.header-cart-list figcaption {
+  float: left;
+  width: 90%;
+}
+
+.header-cart-list .header-cart-product-thumbnail {
+  height: auto;
+  width:10%;
+  float: left;
+}
+
+.header-cart-list .header-cart-product-thumbnail-title {
+  float: left;
+  font-family: "uniform", sans-serif !important;
+  font-size: 16px;
+  margin-bottom: 0;
+  width: 50%;
+  text-align: center;
+}
+
+.header-cart-list .header-cart-product-thumbnail-price {
+  float: right;
+  font-family: "uniform", sans-serif !important;
+  font-size: 16px;
+  margin-bottom: 0;
+  width: 50%;
+  text-align: end;
+}
+
+.header-cart-options {
+  position: relative;
+  top: 10px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header-cart-options .header-cart-remove {
+  width: 20px;
+}
+
+.header-cart-options .header-cart-add {
+  width: 20px;
+}
+
+.header-cart-options .header-cart-quantity {
+  font-size: 24px;
+  padding: 0 10px;
+  bottom: 1px;
+  position: relative;
+}
+
+.header-cart-total {
+  padding: 5px 10px;
+}
+
+.header-cart-total .header-cart-total-title {
+  float: left;
+  margin-bottom: 0;
+}
+
+.header-cart-total .header-cart-total-price {
+  float: right;
+  margin-bottom: 0;
 }
 
 /* SUB HEADER */
@@ -100,6 +287,7 @@ table {
   background-position: bottom;
   min-height: 600px;
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0) !important;
+  position: relative;
 }
 
 .product-thumbnail {
@@ -108,6 +296,50 @@ table {
   justify-content: center;
   padding: 40px 0;
   margin: 0 auto;
+}
+
+.product-thumbnail-title {
+  text-align: center;
+  color: #e41e2b;
+  height: 24px;
+  margin-bottom: 0 !important;
+  font-family: "uniform-extra-condense", sans-serif !important;
+}
+
+.product-thumbnail-price {
+  text-align: center;
+  margin-bottom: 2px !important;
+  font-family: "uniform", sans-serif !important;
+}
+
+.product-thumbnail-button {
+  margin: 0 auto;
+}
+
+.continue-shopping {
+  height: 100px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color:rgba(256, 256, 256, 0.75);
+  -webkit-box-shadow: 0px -3px 12px 0px rgba(256, 256, 256, 0.95);
+  -moz-box-shadow:    0px -3px 12px 0px rgba(256, 256, 256, 0.95);
+  box-shadow:         0px -3px 12px 0px rgba(256, 256, 256, 0.95);
+}
+
+.continue-shopping span {
+  text-align: center;
+  width: 100%;
+}
+
+.continue-shopping-button {
+  margin: 10px auto;
+  font-size: 26px !important;
+  height: 80px;
+  width: 80vw;
+  max-width: 600px;
 }
 
 /* FOOTER */
@@ -147,34 +379,4 @@ table {
 .footer ul li a {
   color: #fff;
   text-decoration: none;
-}
-
-
-/* FONTS */
-@font-face{
-  font-family:"uniform-bold";
-  src:url("./assets/fonts/UniformBold.ttf") format("woff"),
-  url("./assets/fonts/UniformBold.ttf") format("opentype"),
-  url("./assets/fonts/UniformBold.ttf") format("truetype");
-}
-
-@font-face{
-  font-family:"uniform-medium";
-  src:url("./assets/fonts/UniformMedium.ttf") format("woff"),
-  url("./assets/fonts/UniformMedium.ttf") format("opentype"),
-  url("./assets/fonts/UniformMedium.ttf") format("truetype");
-}
-
-@font-face{
-  font-family:"uniform-light";
-  src:url("./assets/fonts/UniformLight.ttf") format("woff"),
-  url("./assets/fonts/UniformLight.ttf") format("opentype"),
-  url("./assets/fonts/UniformLight.ttf") format("truetype");
-}
-
-@font-face{
-  font-family:"uniform-extra-condense";
-  src:url("./assets/fonts/UniformExtraCondensedMedium.ttf") format("woff"),
-  url("./assets/fonts/UniformExtraCondensedMedium.ttf") format("opentype"),
-  url("./assets/fonts/UniformExtraCondensedMedium.ttf") format("truetype");
 }
