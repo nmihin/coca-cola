@@ -6,59 +6,61 @@
       <span class="header-cart-text">max.: 3</span>
       <img [matMenuTriggerFor]="cartOpen" class="cart" src="../assets/icons/shopping-cart.svg" />
       <mat-menu class="header-menu" #cartOpen="matMenu">
-        <ul class="header-cart-list">
-          <li class="header-cart-list-element">
-            <figure>
-              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
-              <figcaption>
-                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
-                <h2 class="header-cart-product-thumbnail-price">
-                  <span>EUR </span>
-                  <data>2,00</data>
-                </h2>
-                <div class="header-cart-options">
-                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
-                  <span class="header-cart-quantity">1</span>
-                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
-                </div>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="header-cart-list-element">
-            <figure>
-              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
-              <figcaption>
-                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
-                <h2 class="header-cart-product-thumbnail-price">
-                  <span>EUR </span>
-                  <data>2,00</data>
-                </h2>
-                <div class="header-cart-options">
-                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
-                  <span class="header-cart-quantity">1</span>
-                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
-                </div>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="header-cart-list-element">
-            <figure>
-              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
-              <figcaption>
-                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
-                <h2 class="header-cart-product-thumbnail-price">
-                  <span>EUR </span>
-                  <data>2,00</data>
-                </h2>
-                <div class="header-cart-options">
-                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
-                  <span class="header-cart-quantity">1</span>
-                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
-                </div>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
+        <ng-template matMenuContent>
+          <ul class="header-cart-list">
+            <li class="header-cart-list-element">
+              <figure>
+                <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+                <figcaption>
+                  <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
+                  <h2 class="header-cart-product-thumbnail-price">
+                    <span>EUR </span>
+                    <data>2,00</data>
+                  </h2>
+                  <div class="header-cart-options">
+                    <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
+                    <span class="header-cart-quantity">1</span>
+                    <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="header-cart-list-element">
+              <figure>
+                <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+                <figcaption>
+                  <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
+                  <h2 class="header-cart-product-thumbnail-price">
+                    <span>EUR </span>
+                    <data>2,00</data>
+                  </h2>
+                  <div class="header-cart-options">
+                    <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
+                    <span class="header-cart-quantity">1</span>
+                    <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="header-cart-list-element">
+              <figure>
+                <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+                <figcaption>
+                  <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
+                  <h2 class="header-cart-product-thumbnail-price">
+                    <span>EUR </span>
+                    <data>2,00</data>
+                  </h2>
+                  <div class="header-cart-options">
+                    <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
+                    <span class="header-cart-quantity">1</span>
+                    <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </ng-template>
         <div class="header-cart-total">
           <h2 class="header-cart-total-title">Gesamt</h2>
           <h2 class="header-cart-total-price">
@@ -180,14 +182,6 @@
             <button class="product-thumbnail-button cc-btn__primary">Hinzufügen</button>
           </figcaption>
         </figure>
-      </div>
-    </div>
-    <div class="cookies">
-      <h2 class="cookies-title">Diese Webseite verwendet Cookies</h2>
-      <p class="cookies-content">Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unsere Website zu analysieren. Außerdem geben wir Informationen zu Ihrer Verwendung unserer Website an unsere Partner für soziale Medien, Werbung und Analysen weiter. Unsere Partner führen diese Informationen möglicherweise mit weiteren Daten zusammen, die Sie ihnen bereitgestellt haben oder die sie im Rahmen Ihrer Nutzung der Dienste gesammelt haben.</p>
-      <div class="cookies-footer">
-        <button class="product-thumbnail-button cc-btn__ghost">Präferenzen</button>
-        <button class="product-thumbnail-button cc-btn__primary">Zulassen</button>
       </div>
     </div>
     <div class="continue-shopping">

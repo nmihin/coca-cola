@@ -151,12 +151,13 @@ table {
   background: linear-gradient(to bottom, #95ce42 0%,#608f1b 100%);
 }
 .cc-btn__ghost {
-  color: #84346a !important;
+  color: #84346a;
   border-radius: 6px !important;
   background: transparent;
 }
 .cc-btn__ghost:hover {
-  background: #000;
+  color: #000;
+  background:transparent;
 }
 
 /* HEADER */
@@ -171,6 +172,33 @@ table {
 
 .header-menu {
   border:2px solid #a51144;
+  margin-top:30px;
+}
+
+.header-menu:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #a51144;
+  top:10px;
+  right: 10px;
+  bottom: auto;
+}
+
+.header-menu:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #fff;
+  top:12px;
+  right: 10px;
+  bottom: auto;
 }
 
 .header-logo {
@@ -415,8 +443,8 @@ table {
 
 /* COOKIES */
 .cookies {
-  position: absolute;
-  bottom: 20px;
+  position: relative;
+  bottom: 0;
   background-color: rgba(256, 256, 256, 0.9);
   border:2px solid #a51144;
   border-radius: 5px;
@@ -426,10 +454,34 @@ table {
   margin: 0 auto;
   left: 0;
   right: 0;
+  float: left;
 }
 .cookies-title {
   font-family: "uniform-extra-condense", sans-serif !important;
 }
 .cookies-content {
   font-family: "uniform", sans-serif !important;
+}
+.cookies-footer {
+  position: relative;
+  display: block;
+  float: right;
+}
+.cookies-footer > button {
+  float: right;
+  margin-left: 10px;
+}
+
+
+/* MATRIAL */
+.mat-dialog-container {
+  position: relative;
+  padding: 0 !important;
+  background: transparent;
+  overflow: hidden !important;
+}
+
+.cdk-overlay-pane {
+  position: absolute !important;
+  bottom: 40px;
 }
