@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './wifi/home/home.component'
+import { HomeComponent } from './wifi/home/home.component';
 import { PaymentComponent } from './wifi/payment/payment.component';
+import { PhoneComponent } from './wifi/phone/phone.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,13 @@ const routes: Routes = [
     component: PaymentComponent,
     data: {
       title: "Zahlungsart wählen"
+    }
+  },
+  {
+    path: 'wifi-phone',
+    component: PhoneComponent,
+    data: {
+      title: "Rufnummer eingeben"
     }
   }
 ];
