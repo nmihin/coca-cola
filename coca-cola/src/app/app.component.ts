@@ -8,21 +8,12 @@ import { CookieComponent } from './cookie/cookie.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'coca-cola';
 
-  constructor(public dialog: MatDialog) {}
+  constructor() {}
 
 
   ngOnInit(): void {
-    let dialogRef = this.dialog.open(CookieComponent, {});
-  }
 
-  openDialog(): void {
-    let dialogRef = this.dialog.open(CookieComponent, {});
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 
 }

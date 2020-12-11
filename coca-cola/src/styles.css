@@ -330,6 +330,11 @@ table {
 .subheader-back {
   height: 30px;
 }
+
+.subheader-back:hover {
+  cursor: pointer;
+}
+
 .subheader-title {
   color: #fff;
   text-align: center;
@@ -400,6 +405,34 @@ table {
   height: 80px;
   width: 80vw;
   max-width: 600px;
+}
+
+.payment-option-list {
+  float: left;
+}
+
+.payment-option {
+  float: left;
+  width: 100%;
+  border:1px solid #a51144;
+  padding: 10px;
+  border-radius: 5px;;
+  margin-bottom: 10px;
+}
+
+.payment-option .payment-thumbnail {
+  height: auto;
+  max-height: 60px;
+  max-width: 100%;
+  min-width: 100px;
+}
+
+.payment-option .payment-thumbnail.apple-pay {
+  width: 130px;
+}
+
+.payment-option .payment-thumbnail.google-pay {
+  width: 130px;
 }
 
 /* FOOTER */
@@ -480,6 +513,28 @@ table {
   background: transparent;
   overflow: hidden !important;
 }
+
+.mat-radio-label {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #5d0d43;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #5d0d43;
+}
+
+.mat-radio-container {
+  transform: scale(1.5);
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.mat-radio-button div.mat-ripple-element {
+  display: none !important;}
 
 .cdk-overlay-pane {
   position: absolute !important;
