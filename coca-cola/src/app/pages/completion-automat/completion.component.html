@@ -1,0 +1,26 @@
+<mat-card class="content">
+  <div class="outer-wrapper">
+  <div class="wrapper">
+    <div class="row">
+      <!--BUY OR CLOSE-->
+      <div class="col-xs-offset-2 col-xs-8">
+        <img class="checked" src="../../../assets/icons/check.svg" />
+      </div>
+      <div class="col-xs-offset-2 col-xs-8">
+        <h2 class="product-total-title">Vielen Dank für deinen Einkauf!</h2>
+        <h2 class="phone-title">Es werden EUR 4.00 über deine nächste Mobilfunkrechnung eingezogen.</h2>
+      </div>
+      <div class="col-xs-offset-1 col-xs-10">
+        <button [routerLink]="['/productselect-webshop']" class="continue-shopping-button cc-btn__secondary">
+          <span>Weiterere Produkte kaufen</span>
+        </button>
+      </div>
+      <div class="col-xs-offset-1 col-xs-10">
+        <button [routerLink]="['/splash']" class="continue-shopping-button small cc-btn__primary">
+          <span>Schließen</span>
+        </button>
+      </div>
+    </div>
+    </div>
+  </div>
+</mat-card>

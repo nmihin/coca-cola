@@ -1,59 +1,29 @@
 <mat-toolbar class="header">
   <img class="header-logo" src="../assets/icons/logo.svg" />
   <div class="header-cart">
-    <span class="header-cart-total">0</span>
+    <span class="header-cart-total">{{productsService.addedProducts.length}}</span>
     <span class="header-cart-text">max.: 3</span>
     <img [matMenuTriggerFor]="cartOpen" class="cart" src="../assets/icons/shopping-cart.svg" />
     <mat-menu class="header-menu" #cartOpen="matMenu">
       <ng-template matMenuContent>
         <ul class="header-cart-list">
-          <li class="header-cart-list-element">
+          <li *ngFor="let item of productsService.addedProducts; trackBy: trackByFn" class="header-cart-list-element">
             <figure>
-              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
+              <img class="header-cart-product-thumbnail" alt="{{item.name}}" src="{{item.thumbnail}}" />
               <figcaption>
-                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
+                <h2 class="header-cart-product-thumbnail-title">{{item.name}}</h2>
                 <h2 class="header-cart-product-thumbnail-price">
                   <span>EUR </span>
-                  <data>2,00</data>
+                  <data>{{item.price | number: "1.2-2"}}</data>
                 </h2>
                 <div class="header-cart-options">
-                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
-                  <span class="header-cart-quantity">1</span>
-                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
-                </div>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="header-cart-list-element">
-            <figure>
-              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
-              <figcaption>
-                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
-                <h2 class="header-cart-product-thumbnail-price">
-                  <span>EUR </span>
-                  <data>2,00</data>
-                </h2>
-                <div class="header-cart-options">
-                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
-                  <span class="header-cart-quantity">1</span>
-                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
-                </div>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="header-cart-list-element">
-            <figure>
-              <img class="header-cart-product-thumbnail" alt="Sprite" src="../assets/products/test-image.png" />
-              <figcaption>
-                <h2 class="header-cart-product-thumbnail-title">Sprite</h2>
-                <h2 class="header-cart-product-thumbnail-price">
-                  <span>EUR </span>
-                  <data>2,00</data>
-                </h2>
-                <div class="header-cart-options">
-                  <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
-                  <span class="header-cart-quantity">1</span>
-                  <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
+                  <button (click)="$event.stopPropagation();reduceProductQuantity(item.id);" mat-icon-button>
+                    <img class="header-cart-remove" src="../assets/icons/icon-minus.svg" />
+                  </button>
+                  <span class="header-cart-quantity">{{item.quantity}}</span>
+                  <button (click)="$event.stopPropagation();addProductQuantity(item.id);" mat-icon-button>
+                    <img class="header-cart-add" src="../assets/icons/icon-plus.svg" />
+                  </button>
                 </div>
               </figcaption>
             </figure>
@@ -64,7 +34,7 @@
         <h2 class="header-cart-total-title">Gesamt</h2>
         <h2 class="header-cart-total-price">
           <span>EUR </span>
-          <data>6,00</data>
+          <data>{{productSumTotal | number: "1.2-2"}}</data>
         </h2>
       </div>
     </mat-menu>

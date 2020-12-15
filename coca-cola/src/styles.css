@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; overflow: hidden; }
 body {
   background-color:#fff;
   margin: 0;
   font-family: "uniform-extra-condense", sans-serif !important;
+  display: flex;
+  flex-direction: column;
 }
 
 /* CSS RESET */
@@ -168,6 +170,7 @@ table {
   justify-content: space-between;
   height: 100px;
   position: relative;
+  min-height: 100px;
 }
 
 .header-menu {
@@ -298,8 +301,8 @@ table {
 
 .header-cart-options .header-cart-quantity {
   font-size: 24px;
-  padding: 0 10px;
-  bottom: 1px;
+  padding: 0px 10px;
+  top: 4px;
   position: relative;
 }
 
@@ -325,6 +328,7 @@ table {
   text-align: center;
   display: flex;
   justify-content: space-between;
+  min-height: 56px;
 }
 
 .subheader-back {
@@ -345,6 +349,26 @@ table {
 }
 
 /* CONTENT */
+.splash-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left: 0;
+  background-color: #e41e2b;
+  z-index: 1;
+}
+
+.splash-screen img {
+  width: 200px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .content {
   background-image: url("./assets/images/wave-background-1.png");
   background-repeat: no-repeat;
@@ -353,6 +377,45 @@ table {
   min-height: 600px;
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0) !important;
   position: relative;
+  min-height: calc(100vh - 352px);
+}
+
+.content .outer-wrapper {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 330px);
+  padding-bottom: 110px;
+}
+
+.content .wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.content-block {
+  float: left;
+  width: 100%;
+  display: block;
+}
+
+.content-text {
+  font-family: "uniform", sans-serif !important;
+  text-align: center;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  float: left;
+  overflow-wrap: break-word;
+}
+
+.checked {
+  width: auto;
+  max-width: 300px;
+  margin: 20px auto 40px auto;
+  text-align: center;
+  display: block;
+  width: 120px;
 }
 
 .product-thumbnail {
@@ -379,6 +442,10 @@ table {
 
 .product-thumbnail-button {
   margin: 0 auto;
+}
+
+.product-thumbnail-button > span {
+  padding-top:4px;
 }
 
 .continue-shopping {
@@ -408,12 +475,18 @@ table {
 }
 
 .continue-shopping-button > span {
+  padding-top: 8px;
   text-align: center;
   width: 100%;
 }
 
+.continue-shopping-button.small {
+  max-width: 200px;
+}
+
 .payment-options-list {
   float: left;
+  width: 100%;
   margin-top:20px;
 }
 
@@ -458,16 +531,17 @@ table {
 }
 
 .product-total-sum .product-total-first {
-  font-weight: 600;
+  font-family: "uniform-bold", sans-serif;
 }
 
 .product-total-sum .product-total-last {
-  font-weight: 600;
+  font-family: "uniform-bold", sans-serif;
   text-align: right;
 }
 
 .product-total-title {
   text-align: center;
+  font-size: 26px !important;
   color: #e31f2b;
   font-family: "uniform-extra-condense", sans-serif !important;
 }
@@ -475,6 +549,7 @@ table {
 .phone-title {
   font-family: "uniform", sans-serif !important;
   text-align: center;
+  line-height: 1.25 !important;
 }
 
 /* FOOTER */
@@ -483,6 +558,7 @@ table {
   display: flex;
   line-height: 1;
   justify-content: space-between;
+  min-height:64px
 }
 
 .footer ul {
@@ -504,7 +580,7 @@ table {
   position: absolute;
   content:'';
   right:0;
-  top:10px;
+  top:2px;
   height: 12px;
 }
 
@@ -547,9 +623,16 @@ table {
   float: right;
   margin-left: 10px;
 }
-
+.cookie-modal {
+  position: absolute !important;
+  bottom: 40px;
+}
 
 /* MATRIAL */
+.mat-card {
+  padding: 0 !important;
+}
+
 .mat-dialog-container {
   position: relative;
   padding: 0 !important;
@@ -592,14 +675,11 @@ mat-form-field {
 .mat-form-field .mat-form-field-underline {
   background-color: transparent;
 }
-.mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #ff884d;
-}
 .mat-form-field.mat-focused .mat-form-field-required-marker {
-  color: #ff884d;
+  color: #95ce42;
 }
 .mat-form-field.mat-focused .mat-input-element {
-  color: #ff884d;
+  color: #95ce42;
 }
 .mat-form-field.mat-form-field-invalid .mat-input-element {
   color: #959595;
@@ -607,8 +687,27 @@ mat-form-field {
 .mat-form-field-underline {
   display: none;
 }
+.mat-form-field-infix {
+  display: flex !important;
+}
 
-.cdk-overlay-pane {
-  position: absolute !important;
-  bottom: 40px;
+
+/* HELPERS */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e3e3e3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d7d7d7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff
 }

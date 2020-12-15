@@ -16,11 +16,24 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// WIFI
+// PAGES
 import { CookieComponent } from './cookie/cookie.component';
-import { HomeComponent } from './wifi/home/home.component';
-import { PaymentComponent } from './wifi/payment/payment.component';
-import { PhoneComponent } from './wifi/phone/phone.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProductselectComponent } from './pages/productselect/productselect.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { PhoneComponent } from './pages/phone/phone.component';
+import { TanComponent } from './pages/tan-number/tan.component';
+import { CompletionWebshopComponent } from './pages/completion-webshop/completion.component';
+import { CompletionAutomatComponent } from './pages/completion-automat/completion.component';
+import { ErrorConnectionComponent } from './pages/error-connection/error.component';
+import { ErrorTechnicalComponent } from './pages/error-technical/error.component';
+import { SplashComponent } from './pages/splash/splash.component';
+
+// DIRECTIVES
+import { ScrollTracker } from './directives/ScrollTracker.directive'
+
+// SERVICES
+import { ProductsService } from './services/products.service';
 
 // STRUCTURE
 import { HeaderComponent } from './header/header.component';
@@ -35,6 +48,14 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     PaymentComponent,
     PhoneComponent,
+    TanComponent,
+    CompletionWebshopComponent,
+    CompletionAutomatComponent,
+    ErrorConnectionComponent,
+    ErrorTechnicalComponent,
+    ProductselectComponent,
+    ScrollTracker,
+    SplashComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +72,7 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [Title],
+  providers: [Title,ProductsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

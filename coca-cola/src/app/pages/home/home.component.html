@@ -1,0 +1,37 @@
+<mat-card class="content">
+  <div scrollTracker (scrolled)="updateScrollPos($event)" class="outer-wrapper">
+    <div class="wrapper">
+      <div class="row">
+        <!-- PRODUCT LIST -->
+        <div *ngFor="let item of products; trackBy: trackByFn" class="col-xs-4 col-md-3 col-lg-2">
+          <figure>
+            <img
+              class="product-thumbnail"
+              alt="{{ item.name }}"
+              [attr.src]="item.thumbnail"
+            />
+            <figcaption>
+              <h2 class="product-thumbnail-title">{{ item.name }}</h2>
+              <h3 class="product-thumbnail-price">
+                <span>EUR </span>
+                <data>{{ item.price | number: "1.2-2" }}</data>
+              </h3>
+              <button (click)="addProductType(item.id,item.name,item.price,item.thumbnail)" class="product-thumbnail-button cc-btn__primary">
+                <span>Hinzufügen</span>
+              </button>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="continue-shopping">
+    <div class="col-xs-10 col-xs-offset-1">
+      <button
+        [routerLink]="['/payment']"
+        class="continue-shopping-button cc-btn__secondary">
+        <span>Weiter zum Kauf</span>
+      </button>
+    </div>
+  </div>
+</mat-card>

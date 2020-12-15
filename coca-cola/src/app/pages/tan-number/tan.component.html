@@ -1,0 +1,47 @@
+<mat-card class="content">
+  <div class="outer-wrapper">
+    <div class="wrapper">
+      <div class="row">
+        <!--ENTER NUMBER-->
+        <div class="col-xs-offset-1 col-xs-10">
+          <h2 class="phone-title">Bitte gib den TAN Code ein um deine Bezahlung von EUR 4,00 an Coca-Cola zu bestätigen.</h2>
+          <form>
+            <mat-form-field>
+              <input type="number" maxlength="4" class="phone-input" matInput [formControl]="tanFormControl" [errorStateMatcher]="matcher">
+              <mat-error *ngIf="tanFormControl.hasError('pattern') && !tanFormControl.hasError('required')">
+                Please enter a valid TAN number
+              </mat-error>
+              <mat-error *ngIf="tanFormControl.hasError('required')">
+                Tan number is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </form>
+          <h2 class="phone-title">TAN Code wurde an die Mobilfunknummer 0177 345 6789 versandt. Nicht deine Nummer? Klicke<a href="#">hier</a> um sie zu ändern.</h2>
+        </div>
+        <!--CONTINUE SHOPPING / STOP SHOPPING-->
+        <div class="col-xs-offset-1 col-xs-10">
+          <div class="row">
+            <div class="col-xs-6">
+              <button [disabled]="tanFormControl.hasError('pattern') || tanFormControl.hasError('required')" [routerLink]="['/productselect-webshop']" class="continue-shopping-button cc-btn__primary">
+                <span>Abbrechen</span>
+              </button>
+            </div>
+            <div class="col-xs-6">
+              <button [disabled]="tanFormControl.hasError('pattern') || tanFormControl.hasError('required')" [routerLink]="['/completion-webshop']" class="continue-shopping-button cc-btn__secondary">
+                <span>Kaufen</span>
+              </button>
+            </div>
+            <div class="col-xs-12">
+              <div class="content-block">
+                <p class="content-text">
+                  Mit Klick auf den Kauf-Button erklärst du dich einverstanden zum verbindlichen Kauf dieses Artikels. Mehr Information findest du in den <a href="#">AGBs</a>
+                </p>
+                <p class="content-text">Für den Zahlungsvorgang handelt der Mobilfunkbetreiber (Telefónica Germany GmbH & Co. OHG, Vodafone GmbH, Telekom Deutschland GmbH) als Agent im Namen des Zahlungsinstituts DIMOCO Europe GmbH. Die Abwicklung der Zahlung erfolgt über die Mobilfunkrechnung.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

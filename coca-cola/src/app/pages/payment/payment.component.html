@@ -1,0 +1,70 @@
+<mat-card class="content">
+  <div class="outer-wrapper">
+    <div class="wrapper">
+      <div class="row">
+        <!--SELECT PAYMENT-->
+        <div class="col-xs-offset-1 col-xs-10">
+          <mat-radio-group class="payment-options-list">
+            <mat-radio-button class="payment-option" value="1">
+              <img
+                class="payment-thumbnail"
+                alt="Handy Payment"
+                src="../../../assets/payment/payment-handy.png"
+              />
+            </mat-radio-button>
+            <mat-radio-button class="payment-option" value="2">
+              <img
+                class="payment-thumbnail apple-pay"
+                alt="Apple Pay"
+                src="../../../assets/payment/payment-apple-pay.svg"
+              />
+            </mat-radio-button>
+            <mat-radio-button class="payment-option" value="3">
+              <img
+                class="payment-thumbnail google-pay"
+                alt="Google Pay"
+                src="../../../assets/payment/payment-google-pay.svg"
+              />
+            </mat-radio-button>
+            <mat-radio-button class="payment-option" value="4">
+              <img
+                class="payment-thumbnail"
+                alt="Visa"
+                src="../../../assets/payment/payment-visa.svg"
+              />
+            </mat-radio-button>
+            <mat-radio-button class="payment-option" value="5">
+              <img
+                class="payment-thumbnail"
+                alt="Mastercard"
+                src="../../../assets/payment/payment-mastercard.svg"
+              />
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <!--PRODUCT TOTAL-->
+        <div class="col-xs-offset-2 col-xs-8">
+          <h2 class="product-total-title">Produktauswahl</h2>
+          <div class="product-total-list">
+            <div class="row" *ngFor="let item of productsService.addedProducts; trackBy: trackByFn">
+              <div class="col-xs-6 product-total-first">{{item.quantity}}x {{item.name}}</div>
+              <div class="col-xs-6 product-total-last">EUR {{item.price | number: "1.2-2"}}</div>
+            </div>
+          </div>
+          <div class="product-total-sum">
+            <div class="row">
+              <div class="col-xs-6 product-total-first">Gesamt</div>
+              <div class="col-xs-6 product-total-last">EUR {{productSumTotal | number: "1.2-2"}}</div>
+            </div>
+          </div>
+        </div>
+        <!--CONTINUE SHOPPING-->
+        <div class="col-xs-offset-1 col-xs-10">
+          <button [routerLink]="['/phone']" class="continue-shopping-button cc-btn__secondary">
+            <span>Weiter</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

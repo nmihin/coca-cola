@@ -14,6 +14,7 @@ export class CookieComponent {
 
     allowCookie(): void {
       this.dialogRef.close();
+      localStorage.setItem('CookieAcceptedCocaCola', 'true');
     }
 
     preferences(): void {
